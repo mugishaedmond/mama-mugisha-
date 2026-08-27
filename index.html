@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="rw" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAMA MUGISHA - Ceremony Rentals & Bridal Wear</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            gold: '#D4AF37',
+                            darkGold: '#AA820A',
+                            emerald: '#0B4F3A',
+                            deepGreen: '#063426',
+                            cream: '#FAF7F2',
+                            burgundy: '#6B1D2F'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'Georgia', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        h1, h2, h3, .font-serif { font-family: 'Playfair Display', serif; }
+        .hero-bg {
+            background: linear-gradient(rgba(6, 52, 38, 0.82), rgba(6, 52, 38, 0.88)), 
+                        url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1600&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-brand-cream text-gray-800 antialiased selection:bg-brand-gold selection:text-white">
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="bg-brand-emerald text-brand-cream text-xs sm:text-sm py-2 px-4 text-center font-medium flex justify-between items-center max-w-full overflow-hidden">
+        <div class="container mx-auto flex justify-between items-center">
+            <span class="flex items-center gap-2">
+                <i class="fa-solid fa-crown text-brand-gold">
+</i> MAMA MUGISHA - Ubukwe n'Ibirori by'Umutekano no Gusa Neza
+            </span>
+            <div class="flex items-center space-x-4">
+                <a href="tel:+250788532567" class="hover:text-brand-gold transition-colors flex items-center gap-1 font-semibold">
+                    <i class="fa-solid fa-phone text-xs"></i> +250 788 532 567
+                </a>
+                <span class="hidden md:inline text-gray-400">|</span>
+                <span class="hidden md:inline text-xs">Kigali, Rwanda</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN NAVIGATION -->
+    <nav class="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-12 h-12 rounded-full bg-brand-emerald text-brand-gold flex items-center justify-center font-bold text-xl border-2 border-brand-gold shadow-md group-hover:scale-105 transition-transform">
+                        MM
+                    </div>
+                    <div>
+                        <span class="block font-serif text-2xl font-bold tracking-tight text-brand-deepGreen">MAMA MUGISHA</span>
+                        <span class="block text-xs uppercase tracking-widest text-brand-gold font-semibold">Ceremony & Bridal Shop</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-8 text-sm font-medium">
+                    <a href="#about" class="text-gray-700 hover:text-brand-emerald transition-colors">Abo Turi Bo</a>
+                    <a href="#services" class="text-gray-700 hover:text-brand-emerald transition-colors">Ceremony Setups</a>
+                    <a href="#bridal-attire" class="text-gray-700 hover:text-brand-emerald transition-colors">Imyenda y'Ubukwe</a>
+                    <a href="#estimator" class="text-gray-700 hover:text-brand-emerald transition-colors">Baza Ikiguzi</a>
+                    <a href="#catalog" class="text-gray-700 hover:text-brand-emerald transition-colors">Icuruzwa ryose</a>
+                </div>
+
+                <!-- Call To Actions -->
+                <div class="hidden sm:flex items-center space-x-3">
+                    <a href="https://wa.me/250788532567?text=Mwaramutse%20Mama%20Mugisha,%20ndashaka%20ibindi%20bisobanuro%20ku%20birori%20byanjye." target="_blank" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2.5 rounded-full text-sm font-semibold shadow-md hover:shadow-lg transition-all flex items-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>WhatsApp Direct</span>
+                    </a>
+                    
+                    <button onclick="toggleCartModal()" class="relative p-2.5 text-brand-emerald hover:bg-gray-100 rounded-full transition-colors">
+                        <i class="fa-solid fa-shopping-bag text-xl"></i>
+                        <span id="cartCount" class="absolute -top-1 -right-1 bg-brand-gold text-brand-deepGreen text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-white">0</span>
+                    </button>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="lg:hidden flex items-center gap-2">
+                    <button onclick="toggleCartModal()" class="p-2 text-brand-emerald relative">
+                        <i class="fa-solid fa-shopping-bag text-xl"></i>
+                        <span id="cartCountMobile" class="absolute top-0 right-0 bg-brand-gold text-brand-deepGreen text-xs font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
+                    </button>
+                    <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="p-2 rounded-md text-gray-700 hover:text-brand-emerald focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-white border-b border-gray-200 px-4 pt-2 pb-6 space-y-3">
+            <a href="#about" onclick="toggleMobileMenu()" class="block py-2 text-gray-700 font-medium border-b border-gray-100">Abo Turi Bo</a>
+            <a href="#services" onclick="toggleMobileMenu()" class="block py-2 text-gray-700 font-medium border-b border-gray-100">Ceremony Setups</a>
+            <a href="#bridal-attire" onclick="toggleMobileMenu()" class="block py-2 text-gray-700 font-medium border-b border-gray-100">Imyenda y'Ubukwe</a>
+            <a href="#estimator" onclick="toggleMobileMenu()" class="block py-2 text-gray-700 font-medium border-b border-gray-100">Baza Ikiguzi</a>
+            <a href="#catalog" onclick="toggleMobileMenu()" class="block py-2 text-gray-700 font-medium border-b border-gray-100">Icuruzwa ryose</a>
+            <div class="pt-3 flex flex-col gap-2">
+                <a href="https://wa.me/250788532567" target="_blank" class="w-full bg-green-600 text-white py-3 rounded-lg font-semibold text-center flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    Baza kuri WhatsApp (+250788532567)
+                </a>
+                <a href="tel:+250788532567" class="w-full bg-brand-emerald text-white py-3 rounded-lg font-semibold text-center flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-phone"></i>
+                    Hamagara +250 788 532 567
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="hero-bg text-white relative py-20 lg:py-32 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-5xl mx-auto text-center space-y-8">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-brand-gold/40 text-brand-gold text-xs sm:text-sm font-semibold tracking-wide">
+                <i class="fa-solid fa-sparkles"></i>
+                Ibirori Byiza, Ibikoresho By'Agaciro & Imyenda Y'Ubukwe
+            </div>
+            
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+                Mutegurire Ibirori Byawe Muri <span class="text-brand-gold italic">MAMA MUGISHA</span>
+            </h1>
+            
+            <p class="text-gray-200 text-base sm:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed">
+                Tukurebera ibikoresho byose by'ibirori: **Ubukwe bwa Kinyarwanda (Gusaba/Gukwa)**, **Ubukwe bwo mu Rusengero**, **Isabukuru (Birthday)**, **Bridal Shower**, ndetse n'imyenda myiza: **Imikenyero, Amakanzu y'Ubukwe & Amasuti y'Abageni**.
+            </p>
+
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 pt-4">
+                <a href="#catalog" class="w-full sm:w-auto px-8 py-4 bg-brand-gold hover:bg-brand-darkGold text-brand-deepGreen font-bold rounded-full shadow-lg transition-all transform hover:-translate-y-0.5 text-center">
+                    <i class="fa-solid fa-list-check mr-2"></i> Shaka Ibikoresho N'Imyenda
+                </a>
+                <a href="https://wa.me/250788532567?text=Mwaramutse%20Mama%20Mugisha,%20ndashaka%20gutanga%20command%20y%27ibikoresho%20by%27ibirori." target="_blank" class="w-full sm:w-auto px-8 py-4 bg-white/10 hover:bg-white/20 border-2 border-white/80 backdrop-blur-sm text-white font-semibold rounded-full shadow-md transition-all text-center flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-green-400 text-xl"></i> Tanga Command Kuri WhatsApp
+                </a>
+            </div>
+
+            <!-- Highlights Pill -->
+            <div class="pt-8 grid grid-cols-2 md:grid-cols-4 gap-4 text-center border-t border-white/20 mt-12 max-w-4xl mx-auto text-xs sm:text-sm text-gray-200">
+                <div class="p-2">
+                    <i class="fa-solid fa-crown text-brand-gold text-xl mb-1 block"></i>
+                    <span>Imikenyero Y'Icyubahiro</span>
+                </div>
+                <div class="p-2">
+                    <i class="fa-solid fa-church text-brand-gold text-xl mb-1 block"></i>
+                    <span>Ceremony Decor & Tents</span>
+                </div>
+                <div class="p-2">
+                    <i class="fa-solid fa-shirt text-brand-gold text-xl mb-1 block"></i>
+                    <span>Amasuti & Amakanzu</span>
+                </div>
+                <div class="p-2">
+                    <i class="fa-solid fa-truck-ramp-box text-brand-gold text-xl mb-1 block"></i>
+                    <span>Kuzana no Gutegura</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- STATS / TRUST BAR -->
+    <section class="bg-white py-8 border-b border-gray-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div class="space-y-1">
+                <p class="text-3xl font-bold text-brand-emerald font-serif">100%</p>
+                <p class="text-xs sm:text-sm text-gray-600 uppercase tracking-wider font-semibold">Guhaza Abakiriya</p>
+            </div>
+            <div class="space-y-1">
+                <p class="text-3xl font-bold text-brand-emerald font-serif">500+</p>
+                <p class="text-xs sm:text-sm text-gray-600 uppercase tracking-wider font-semibold">Ibirori Bimaze Gutegurwa</p>
+            </div>
+            <div class="space-y-1">
+                <p class="text-3xl font-bold text-brand-emerald font-serif">250+</p>
+                <p class="text-xs sm:text-sm text-gray-600 uppercase tracking-wider font-semibold">Imikenyero & Amakanzu</p>
+            </div>
+            <div class="space-y-1">
+                <p class="text-3xl font-bold text-brand-emerald font-serif">+250 788 532 567</p>
+                <p class="text-xs sm:text-sm text-gray-600 uppercase tracking-wider font-semibold">Hotline / WhatsApp</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="relative">
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
+                    <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1000&auto=format&fit=crop" alt="Mama Mugisha Ceremony Preparation" class="w-full h-[450px] object-cover">
+                </div>
+                <!-- Badge floating -->
+                <div class="absolute -bottom-6 -right-6 bg-brand-emerald text-white p-6 rounded-2xl shadow-xl hidden sm:block border-2 border-brand-gold">
+                    <p class="text-2xl font-bold font-serif text-brand-gold">MAMA MUGISHA</p>
+                    <p class="text-xs text-gray-200">Ubumenyi n'ubushozi mu birori by'ubukwe</p>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <span class="text-brand-gold font-bold tracking-widest text-xs uppercase bg-brand-gold/10 px-3 py-1 rounded-full">Abo turi bo</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-brand-deepGreen">
+                    Umutekano n'Ubwiza mu Birori Byose By'Umuryango
+                </h2>
+                <p class="text-gray-600 leading-relaxed">
+                    Dukora akazi k'indashyikirwa mu gufasha abageni n'imiryango gutegura ibirori by'ubwoko bwose. Waba utegura ubukwe bwa Kinyarwanda, ubwo mu rusengero, isabukuru y'amavuko, cyangwa bridal shower, <strong>MAMA MUGISHA</strong> aguha ibikoresho bigezweho n'umyenda yo mu rwego rwo hejuru.
+                </p>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                    <div class="flex items-start gap-3 bg-white p-4 rounded-xl border border-gray-100 shadow-sm">
+                        <i class="fa-solid fa-gem text-brand-gold text-2xl mt-1"></i>
+                        <div>
+                            <h4 class="font-bold text-gray-800 text-sm">Imyenda Y'Abageni</h4>
+                            <p class="text-xs text-gray-500">Amakanzu, Imikenyero n'Amasuti meza y'amadecorations meza.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3 bg-white p-4 rounded-xl border border-gray-100 shadow-sm">
+                        <i class="fa-solid fa-award text-brand-gold text-2xl mt-1"></i>
+                        <div>
+                            <h4 class="font-bold text-gray-800 text-sm">Ibikoresho Byose</h4>
+                            <p class="text-xs text-gray-500">Barn, chairs, backdrops, lighting & cultural setup props.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-4 flex items-center gap-4">
+                    <a href="tel:+250788532567" class="inline-flex items-center gap-2 bg-brand-emerald text-white px-6 py-3 rounded-full font-semibold hover:bg-brand-deepGreen transition-all shadow-md">
+                        <i class="fa-solid fa-phone"></i> Hamagara Mama Mugisha
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CEREMONY SERVICES OFFERED -->
+    <section id="services" class="py-16 bg-white border-y border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-3 mb-12">
+                <span class="text-brand-gold font-bold tracking-widest text-xs uppercase">Ibikirimo Guhabwa Service</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-brand-deepGreen">Gutegura Ahantu H'Ibirori (Ceremony Setups)</h2>
+                <p class="text-gray-600 text-sm sm:text-base">
+                    Tukazanira no gutegurira ahantu h'ibirori hawe hakaba heza kandi habereye abashyitsi bawe.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Cultural Marriage -->
+                <div class="bg-brand-cream rounded-2xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-xl transition-all group">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?q=80&w=800&auto=format&fit=crop" alt="Cultural Marriage Rwanda" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 right-3 bg-brand-gold text-brand-deepGreen font-bold text-xs px-3 py-1 rounded-full shadow">Gusaba & Gukwa</span>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="text-xl font-bold text-brand-deepGreen">Culture Marriage</h3>
+                        <p class="text-xs text-gray-600 leading-relaxed">
+                            Ibikoresho by'umuco w'Ikinyarwanda: Ibyinsi, Intebe z'imyenda y'Umuco, Amashyiga, Ibisabo, Tente z'ubukwe n'ingoma.
+                        </p>
+                        <button onclick="filterCategory('cultural')" class="text-brand-emerald text-sm font-bold flex items-center gap-1 hover:gap-2 transition-all">
+                            Reba Ibikoresho <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Religion Marriage -->
+                <div class="bg-brand-cream rounded-2xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-xl transition-all group">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=800&auto=format&fit=crop" alt="Religion Marriage" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 right-3 bg-brand-emerald text-white font-bold text-xs px-3 py-1 rounded-full shadow">Urusengero & Reception</span>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="text-xl font-bold text-brand-deepGreen">Religion Marriage</h3>
+                        <p class="text-xs text-gray-600 leading-relaxed">
+                            Amasanduku n'imitako y'urusengero, Red Carpet, Altar Flower arch, Intebe z'abageni n'amameza y'abashyitsi.
+                        </p>
+                        <button onclick="filterCategory('religious')" class="text-brand-emerald text-sm font-bold flex items-center gap-1 hover:gap-2 transition-all">
+                            Reba Ibikoresho <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Birthdays -->
+                <div class="bg-brand-cream rounded-2xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-xl transition-all group">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?q=80&w=800&auto=format&fit=crop" alt="Birthday setup" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 right-3 bg-purple-600 text-white font-bold text-xs px-3 py-1 rounded-full shadow">Isabukuru</span>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="text-xl font-bold text-brand-deepGreen">Birthday Setup</h3>
+                        <p class="text-xs text-gray-600 leading-relaxed">
+                            Backdrops z'amabara agezweho, Balloon Archs, cake stands, Amagambo y'itara (LED neon lights), n'intebe z'umweru.
+                        </p>
+                        <button onclick="filterCategory('birthday')" class="text-brand-emerald text-sm font-bold flex items-center gap-1 hover:gap-2 transition-all">
+                            Reba Ibikoresho <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Bride Show / Shower -->
+                <div class="bg-brand-cream rounded-2xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-xl transition-all group">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=800&auto=format&fit=crop" alt="Bridal Shower" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 right-3 bg-pink-500 text-white font-bold text-xs px-3 py-1 rounded-full shadow">Bride Show</span>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="text-xl font-bold text-brand-deepGreen">Bridal Shower</h3>
+                        <p class="text-xs text-gray-600 leading-relaxed">
+                            Imitako y'abagore n'abageni, Photoshoot backdrops, Intebe za Queen Bride, Utubati tw'indabo n'amashimwe.
+                        </p>
+                        <button onclick="filterCategory('bridalshower')" class="text-brand-emerald text-sm font-bold flex items-center gap-1 hover:gap-2 transition-all">
+                            Reba Ibikoresho <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BRIDAL CLOTHING SHOWCASE -->
+    <section id="bridal-attire" class="py-16 bg-brand-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-3 mb-12">
+                <span class="text-brand-gold font-bold tracking-widest text-xs uppercase">Collection y'Abageni</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-brand-deepGreen">Imyenda Y'Ubukwe Bwa Mama Mugisha</h2>
+                <p class="text-gray-600 text-sm sm:text-base">
+                    Tukukodesha no kukucuruza imyenda myiza y'abageni igezweho kandi ijyanye n'umuco n'icyubahiro.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Imikenyero -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 flex flex-col">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=800&auto=format&fit=crop" alt="Imikenyero y'Ubukwe" class="w-full h-full object-cover">
+                        <span class="absolute top-3 left-3 bg-brand-gold text-brand-deepGreen font-bold text-xs px-3 py-1 rounded-full">Traditional Wear</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-brand-deepGreen">Imikenyero y'Ubukwe</h3>
+                            <p class="text-gray-600 text-xs mt-2 leading-relaxed">
+                                Imikenyero y'amabara yose y'abageni n'abakobwa babaherekeza (Bridesmaids). Ikoranye ubwitize buhanitse n'umudari mwiza.
+                            </p>
+                        </div>
+                        <div class="pt-2 border-t border-gray-100 flex items-center justify-between">
+                            <span class="text-brand-emerald font-bold text-sm">Ukodeke: kuva 15,000 RWF</span>
+                            <button onclick="filterCategory('imikenyero')" class="px-4 py-1.5 bg-brand-emerald text-white text-xs font-semibold rounded-full hover:bg-brand-deepGreen">Reba Yose</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Amakanzu y'ubukwe -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 flex flex-col">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1594552072238-b8a33785b261?q=80&w=800&auto=format&fit=crop" alt="Amakanzu y'ubukwe" class="w-full h-full object-cover">
+                        <span class="absolute top-3 left-3 bg-brand-emerald text-white font-bold text-xs px-3 py-1 rounded-full">Wedding Gowns</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-brand-deepGreen">Amakanzu y'Ubukwe (Wedding Dresses)</h3>
+                            <p class="text-gray-600 text-xs mt-2 leading-relaxed">
+                                Amakanzu y'abageni y'icyubahiro (Ball gowns, Mermaid style, Modern simple gowns) mu size zose.
+                            </p>
+                        </div>
+                        <div class="pt-2 border-t border-gray-100 flex items-center justify-between">
+                            <span class="text-brand-emerald font-bold text-sm">Ukodeke: kuva 50,000 RWF</span>
+                            <button onclick="filterCategory('amakanzu')" class="px-4 py-1.5 bg-brand-emerald text-white text-xs font-semibold rounded-full hover:bg-brand-deepGreen">Reba Yose</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Suits -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 flex flex-col">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1593030761757-71fae45fa0e7?q=80&w=800&auto=format&fit=crop" alt="Amasuti y'Abageni" class="w-full h-full object-cover">
+                        <span class="absolute top-3 left-3 bg-brand-deepGreen text-brand-gold font-bold text-xs px-3 py-1 rounded-full">Groom Suits</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-brand-deepGreen">Amasuti y'Abageni (Groom & Groomsmen)</h3>
+                            <p class="text-gray-600 text-xs mt-2 leading-relaxed">
+                                Suits za 3-piece z'umugeni n'abasore b'abaperera. Tuxedos, slim fit, n'amabara y'umweru, noza, n'umukara.
+                            </p>
+                        </div>
+                        <div class="pt-2 border-t border-gray-100 flex items-center justify-between">
+                            <span class="text-brand-emerald font-bold text-sm">Ukodeke: kuva 30,000 RWF</span>
+                            <button onclick="filterCategory('suits')" class="px-4 py-1.5 bg-brand-emerald text-white text-xs font-semibold rounded-full hover:bg-brand-deepGreen">Reba Yose</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ESTIMATOR / CALCULATOR TOOL -->
+    <section id="estimator" class="py-16 bg-brand-deepGreen text-white relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-3 mb-10">
+                <span class="text-brand-gold font-bold tracking-widest text-xs uppercase">Shaka Ikigereranyo Ch'Ikiguzi</span>
+                <h2 class="text-3xl font-bold font-serif text-white">Baza Ikiguzi Cyo Gutegura Ibirori Byawe</h2>
+                <p class="text-gray-300 text-sm max-w-2xl mx-auto">
+                    Hitamo ubwoko bw'ibirori n'umubare w'abashyitsi kugirango umenye ikigereranyo cy'ikiguzi urabona kuri Mama Mugisha.
+                </p>
+            </div>
+
+            <div class="bg-white text-gray-800 p-6 sm:p-8 rounded-3xl shadow-2xl space-y-6">
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 uppercase mb-2">Ubwoko bw'Ibirori</label>
+                        <select id="calcEventType" onchange="calculateEstimate()" class="w-full bg-gray-50 border border-gray-300 rounded-xl p-3 text-sm focus:ring-2 focus:ring-brand-emerald outline-none">
+                            <option value="cultural">Ubukwe bw'Umuco (Gusaba/Gukwa)</option>
+                            <option value="religious">Ubukwe bwo mu Rusengero</option>
+                            <option value="birthday">Birthday Party</option>
+                            <option value="bridalshower">Bridal Shower</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 uppercase mb-2">Umubare w'Abashyitsi</label>
+                        <select id="calcGuests" onchange="calculateEstimate()" class="w-full bg-gray-50 border border-gray-300 rounded-xl p-3 text-sm focus:ring-2 focus:ring-brand-emerald outline-none">
+                            <option value="50">Mu nsi y'abantu 50</option>
+                            <option value="150" selected>Abantu 100 - 200</option>
+                            <option value="300">Abantu 200 - 400</option>
+                            <option value="500">Abantu 500+</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 uppercase mb-2">Imyenda Y'Abageni</label>
+                        <select id="calcAttire" onchange="calculateEstimate()" class="w-full bg-gray-50 border border-gray-300 rounded-xl p-3 text-sm focus:ring-2 focus:ring-brand-emerald outline-none">
+                            <option value="none">Ibikoresho gusa (Nta myenda)</option>
+                            <option value="bride">Imikanzu / Imikenyero y'Umutegarugori gusa</option>
+                            <option value="full" selected>Imyenda y'Umugeni n'Umugore (Full Attire Package)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="bg-brand-cream border border-brand-gold/30 p-6 rounded-2xl flex flex-col md:flex-row justify-between items-center gap-4">
+                    <div>
+                        <span class="text-xs text-gray-500 uppercase font-semibold">Ikigereranyo cy'Ikiguzi (Estimated Range)</span>
+                        <p id="calcResult" class="text-3xl font-bold text-brand-emerald font-serif">180,000 RWF - 350,000 RWF</p>
+                        <p class="text-xs text-gray-500 mt-1">* Harimo no kuza gutegura ahantu na Mama Mugisha team.</p>
+                    </div>
+                    
+                    <button onclick="sendEstimateToWhatsapp()" class="w-full md:w-auto px-6 py-3.5 bg-green-600 hover:bg-green-700 text-white font-bold rounded-xl shadow-md transition-all flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        <span>Saba Quotes kuri WhatsApp</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FULL MAIN CATALOG SEARCH & CATALOG -->
+    <section id="catalog" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 mb-8">
+            <div>
+                <span class="text-brand-gold font-bold tracking-widest text-xs uppercase">Icuruzwa n'Ibyokodeshwa</span>
+                <h2 class="text-3xl font-bold text-brand-deepGreen">Ibikoresho & Imyenda Byose</h2>
+            </div>
+
+            <!-- Search bar -->
+            <div class="w-full md:w-72 relative">
+                <input type="text" id="searchInput" onkeyup="searchProducts()" placeholder="Shakisha igikoresho..." class="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-300 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-brand-emerald shadow-sm">
+                <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-gray-400"></i>
+            </div>
+        </div>
+
+        <!-- Filter Categories Tabs -->
+        <div class="flex items-center gap-2 overflow-x-auto pb-4 mb-8 scrollbar-none">
+            <button onclick="filterCategory('all')" class="cat-btn px-5 py-2 rounded-full text-xs font-semibold whitespace-nowrap bg-brand-emerald text-white shadow-sm" data-cat="all">Vyose (All)</button>
+            <button onclick="filterCategory('cultural')" class="cat-btn px-5 py-2 rounded-full text-xs font-semibold whitespace-nowrap bg-white text-gray-700 hover:bg-gray-100 border border-gray-200" data-cat="cultural">Cultural Marriage</button>
+            <button onclick="filterCategory('religious')" class="cat-btn px-5 py-2 rounded-full text-xs font-semibold whitespace-nowrap bg-white text-gray-700 hover:bg-gray-100 border border-gray-200" data-cat="religious">Religion Marriage</button>
+            <button onclick="filterCategory('birthday')" class="cat-btn px-5 py-2 rounded-full text-xs font-semibold whitespace-nowrap bg-white text-gray-700 hover:bg-gray-100 border border-gray-200" data-cat="birthday">Birthday Setup</button>
+            <button onclick="filterCategory('bridalshower')" class="cat-btn px-5 py-2 rounded-full text-xs font-semibold whitespace-nowrap bg-white text-gray-700 hover:bg-gray-100 border border-gray-200" data-cat="bridalshower">Bride Show / Shower</button>
+            <button onclick="filterCategory('imikenyero')" class="cat-btn px-5 py-2 rounded-full text-xs font-semibold whitespace-nowrap bg-white text-gray-700 hover:bg-gray-100 border border-gray-200" data-cat="imikenyero">Imikenyero</button>
+            <button onclick="filterCategory('amakanzu')" class="cat-btn px-5 py-2 rounded-full text-xs font-semibold whitespace-nowrap bg-white text-gray-700 hover:bg-gray-100 border border-gray-200" data-cat="amakanzu">Amakanzu y'Ubukwe</button>
+            <button onclick="filterCategory('suits')" class="cat-btn px-5 py-2 rounded-full text-xs font-semibold whitespace-nowrap bg-white text-gray-700 hover:bg-gray-100 border border-gray-200" data-cat="suits">Amasuti (Suits)</button>
+        </div>
+
+        <!-- Catalog Items Grid -->
+        <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <!-- Dynamic JS items will render here -->
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="py-16 bg-white border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-brand-gold font-bold tracking-widest text-xs uppercase">Ibyo Abakiriya Bavuze</span>
+                <h2 class="text-3xl font-bold text-brand-deepGreen">Ubuhamya Bw'Imiryango Twafashije</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-brand-cream p-6 rounded-2xl border border-gray-100 space-y-4">
+                    <div class="flex text-brand-gold text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-xs text-gray-600 italic leading-relaxed">
+                        "Mama Mugisha yamfurije umukenyero mwiza cyane mu gusaba n'ugukwa kwanjye! Ibikoresho by'umuco byose byari biri ku murongo kandi byari bishya. Mukoze cyane!"
+                    </p>
+                    <div class="flex items-center gap-3 pt-2">
+                        <div class="w-10 h-10 rounded-full bg-brand-emerald text-white flex items-center justify-center font-bold text-sm">CK</div>
+                        <div>
+                            <h4 class="font-bold text-sm text-gray-800">Clarisse & Kevin</h4>
+                            <span class="text-xs text-gray-500">Ubukwe i Rebera, Kigali</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-brand-cream p-6 rounded-2xl border border-gray-100 space-y-4">
+                    <div class="flex text-brand-gold text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-xs text-gray-600 italic leading-relaxed">
+                        "Twakodesheje isuti y'umugeni n'akanzu k'ubukwe kuri Mama Mugisha. Ibiciro byabo biroroshye cyane kandi imyenda iri mu gipimo cyo hejuru. Recommanded!"
+                    </p>
+                    <div class="flex items-center gap-3 pt-2">
+                        <div class="w-10 h-10 rounded-full bg-brand-gold text-brand-deepGreen flex items-center justify-center font-bold text-sm">JD</div>
+                        <div>
+                            <h4 class="font-bold text-sm text-gray-800">Jean-Damascene M.</h4>
+                            <span class="text-xs text-gray-500">Religion Marriage, Kicukiro</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-brand-cream p-6 rounded-2xl border border-gray-100 space-y-4">
+                    <div class="flex text-brand-gold text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-xs text-gray-600 italic leading-relaxed">
+                        "Bridal shower y'inshuti yanjye twayiteguye dukoresheje decor n'ibikoresho bya Mama Mugisha. Baje kubitegura ku gihe kandi birahagije!"
+                    </p>
+                    <div class="flex items-center gap-3 pt-2">
+                        <div class="w-10 h-10 rounded-full bg-brand-emerald text-white flex items-center justify-center font-bold text-sm">AG</div>
+                        <div>
+                            <h4 class="font-bold text-sm text-gray-800">Aline G.</h4>
+                            <span class="text-xs text-gray-500">Bridal Shower, Remera</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT & LOCATION -->
+    <section id="contact" class="py-16 bg-brand-deepGreen text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <span class="text-brand-gold font-bold tracking-widest text-xs uppercase">Tuvugishe</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold font-serif">MAMA MUGISHA Shop</h2>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Ushobora kuduhamagara cyangwa ukatwandikira kuri WhatsApp direct usaba ibikoresho, ikodesha cyangwa usobanuza iby'imyenda y'abageni.
+                    </p>
+
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4 bg-white/5 p-4 rounded-xl border border-white/10">
+                            <div class="w-12 h-12 rounded-full bg-brand-gold/20 text-brand-gold flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-gray-400 block">Numero y'Amatelefoni</span>
+                                <a href="tel:+250788532567" class="text-lg font-bold text-white hover:text-brand-gold">+250 788 532 567</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 bg-white/5 p-4 rounded-xl border border-white/10">
+                            <div class="w-12 h-12 rounded-full bg-green-500/20 text-green-400 flex items-center justify-center text-xl">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-gray-400 block">WhatsApp Line</span>
+                                <a href="https://wa.me/250788532567" target="_blank" class="text-lg font-bold text-white hover:text-green-400">+250 788 532 567</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 bg-white/5 p-4 rounded-xl border border-white/10">
+                            <div class="w-12 h-12 rounded-full bg-brand-gold/20 text-brand-gold flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-gray-400 block">Aho Dukorera</span>
+                                <p class="text-sm font-semibold text-white">Kigali, Rwanda (Tugera aho ibirori biri hose muri Rwanda)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Message Form -->
+                <div class="bg-white text-gray-800 p-8 rounded-3xl shadow-xl space-y-4">
+                    <h3 class="text-xl font-bold text-brand-deepGreen">Tuma Ubumwa Ihuse (Quick Inquiry)</h3>
+                    <form onsubmit="sendFormToWhatsapp(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 mb-1">Izina Ryawe</label>
+                            <input type="text" id="custName" required placeholder="Izina ryawe..." class="w-full p-3 border border-gray-300 rounded-xl text-sm focus:ring-2 focus:ring-brand-emerald outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 mb-1">Ubwoko bw'Ibirori / Imyenda</label>
+                            <input type="text" id="custInterest" required placeholder="E.g. Imikenyero 5 + Tent ya Gusaba" class="w-full p-3 border border-gray-300 rounded-xl text-sm focus:ring-2 focus:ring-brand-emerald outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 mb-1">Tariki y'Ibirori</label>
+                            <input type="date" id="eventDate" class="w-full p-3 border border-gray-300 rounded-xl text-sm focus:ring-2 focus:ring-brand-emerald outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 mb-1">Ubumwa bw'Inyongera</label>
+                            <textarea id="custMsg" rows="3" placeholder="Andika ibindi bisobanuro ushaka..." class="w-full p-3 border border-gray-300 rounded-xl text-sm focus:ring-2 focus:ring-brand-emerald outline-none"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-brand-emerald hover:bg-brand-deepGreen text-white font-bold py-3.5 rounded-xl shadow-md transition-all flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            Ohereza Kuri WhatsApp
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black text-gray-400 py-12 border-t border-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="space-y-3">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 rounded-full bg-brand-emerald text-brand-gold flex items-center justify-center font-bold text-sm">MM</div>
+                    <span class="font-serif text-xl font-bold text-white">MAMA MUGISHA</span>
+                </div>
+                <p class="text-xs text-gray-400 leading-relaxed">
+                    Dukodesha ibikoresho by'ibirori byose: Culture Marriage, Religion Marriage, Birthday & Bridal Shower. N'imyenda y'abageni: Imikenyero, Amakanzu & Suits.
+                </p>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold text-sm mb-3">Servisi Zacu</h4>
+                <ul class="text-xs space-y-2">
+                    <li><a href="#services" class="hover:text-brand-gold">Gusaba & Gukwa Setups</a></li>
+                    <li><a href="#services" class="hover:text-brand-gold">Urusengero Decor & Chairs</a></li>
+                    <li><a href="#services" class="hover:text-brand-gold">Birthday & Bride Show</a></li>
+                    <li><a href="#bridal-attire" class="hover:text-brand-gold">Kukodesha Imikenyero</a></li>
+                    <li><a href="#bridal-attire" class="hover:text-brand-gold">Amakanzu y'Ubukwe & Suits</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold text-sm mb-3">Ibipimo n'Ibiciro</h4>
+                <ul class="text-xs space-y-2">
+                    <li><a href="#estimator" class="hover:text-brand-gold">Baza Budget y'Ibirori</a></li>
+                    <li><a href="#catalog" class="hover:text-brand-gold">Shakisha mu Icuruzwa</a></li>
+                    <li><a href="tel:+250788532567" class="hover:text-brand-gold">Hamagara +250 788 532 567</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold text-sm mb-3">WhatsApp Direct Booking</h4>
+                <p class="text-xs text-gray-400 mb-3">Tanga command yawe ubu kuri WhatsApp ya Mama Mugisha.</p>
+                <a href="https://wa.me/250788532567" target="_blank" class="inline-flex items-center gap-2 bg-green-600 text-white text-xs font-bold px-4 py-2.5 rounded-full hover:bg-green-700">
+                    <i class="fa-brands fa-whatsapp text-sm"></i> +250 788 532 567
+                </a>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-6 border-t border-gray-900 text-center text-xs text-gray-500">
+            <p>&copy; <span id="year"></span> MAMA MUGISHA Ceremony Tools & Bridal Wear. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- CART MODAL / WHATSAPP COMMAND MODAL -->
+    <div id="cartModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl flex flex-col max-h-[90vh]">
+            <div class="bg-brand-emerald text-white p-5 flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-basket-shopping text-brand-gold text-xl"></i>
+                    <h3 class="font-bold text-lg font-serif">Command Yawe (Mama Mugisha Cart)</h3>
+                </div>
+                <button onclick="toggleCartModal()" class="text-gray-300 hover:text-white text-xl">&times;</button>
+            </div>
+
+            <div id="cartItemsList" class="p-6 overflow-y-auto space-y-4 flex-1">
+                <!-- Dynamic Items in Cart -->
+            </div>
+
+            <div class="p-6 border-t border-gray-100 bg-brand-cream space-y-4">
+                <div class="flex justify-between items-center text-sm font-bold">
+                    <span>Igiteranyo (Total Estimate):</span>
+                    <span id="cartTotal" class="text-brand-emerald text-lg font-serif">0 RWF</span>
+                </div>
+
+                <div class="space-y-2">
+                    <label class="block text-xs font-bold text-gray-700">Tariki y'Ibirori Byaye:</label>
+                    <input type="date" id="cartEventDate" class="w-full p-2.5 border border-gray-300 rounded-xl text-xs bg-white">
+                </div>
+
+                <button onclick="sendCartToWhatsapp()" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3.5 rounded-xl shadow-md transition-all flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                    Ohereza Iyi Command Kuri WhatsApp (+250788532567)
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- QUICK FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/250788532567?text=Mwaramutse%20Mama%20Mugisha,%20ndashaka%20ibindi%20bisobanuro%20ku%20birori%20byanjye." target="_blank" class="fixed bottom-6 right-6 z-40 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl flex items-center justify-center gap-2 transition-all transform hover:scale-110 border-2 border-white">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+        <span class="hidden md:inline font-bold text-sm pr-1">Mama Mugisha WhatsApp</span>
+    </a>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Catalog Data
+        const products = [
+            {
+                id: 1,
+                name: "Intebe z'Umuco z'Abageni (Gusaba Throne)",
+                category: "cultural",
+                price: 40000,
+                type: "Rent",
+                image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=800&auto=format&fit=crop",
+                desc: "Intebe z'icyubahiro z'abageni mu gusaba n'ugukwa zikoranye n'imyenda y'umuco."
+            },
+            {
+                id: 2,
+                name: "Tente ya VIP Decorated for Cultural Marriage",
+                category: "cultural",
+                price: 120000,
+                type: "Rent",
+                image: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=800&auto=format&fit=crop",
+                desc: "Tent nini irimo imitako y'umuco w'Ikinyarwanda, amatafari n'amatara meza."
+            },
+            {
+                id: 3,
+                name: "Umukenyero w'Umugeni (Royal Gold/Cream)",
+                category: "imikenyero",
+                price: 25000,
+                type: "Rent / Sale",
+                image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=800&auto=format&fit=crop",
+                desc: "Umukenyero w'igikundiro w'umugeni w'amabara ya Gold n'Umweru uza n'inshutzi."
+            },
+            {
+                id: 4,
+                name: "Umukenyero w'Abakobwa (Bridesmaids - Pack of 4)",
+                category: "imikenyero",
+                price: 60000,
+                type: "Rent",
+                image: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=800&auto=format&fit=crop",
+                desc: "Set y'imikenyero 4 ijyanye mu mabara y'abakobwa baherekeza umugeni."
+            },
+            {
+                id: 5,
+                name: "Akanzu k'Ubukwe (Royal Lace Ball Gown)",
+                category: "amakanzu",
+                price: 90000,
+                type: "Rent / Buy",
+                image: "https://images.unsplash.com/photo-1594552072238-b8a33785b261?q=80&w=800&auto=format&fit=crop",
+                desc: "Akanzu k'umugeni ka princess/ballgown gakozwe muri lace myiza n'amabuye azaza."
+            },
+            {
+                id: 6,
+                name: "Akanzu k'Ubukwe y'Umusitari (Mermaid Wedding Dress)",
+                category: "amakanzu",
+                price: 80000,
+                type: "Rent",
+                image: "https://images.unsplash.com/photo-1546804784-896d0dca3814?q=80&w=800&auto=format&fit=crop",
+                desc: "Mermaid style wedding gown nshya, ifite ikirago kirekire kidasanzwe."
+            },
+            {
+                id: 7,
+                name: "Suti y'Umugeni (Royal Navy Blue Tuxedo 3-Piece)",
+                category: "suits",
+                price: 45000,
+                type: "Rent",
+                image: "https://images.unsplash.com/photo-1593030761757-71fae45fa0e7?q=80&w=800&auto=format&fit=crop",
+                desc: "Suti y'umugeni 3-piece irimo vest, ikoti n'ipantalo biyunguruje mu bwiza."
+            },
+            {
+                id: 8,
+                name: "Suti y'Abasore B'Abaperera (Black Classic Fit)",
+                category: "suits",
+                price: 30000,
+                type: "Rent",
+                image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=800&auto=format&fit=crop",
+                desc: "Suti z'abaperera mu mabara y'umukara n'ibipfundo by'icyubahiro."
+            },
+            {
+                id: 9,
+                name: "Church Altar Floral Arch Decor",
+                category: "religious",
+                price: 50000,
+                type: "Rent & Decor",
+                image: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=800&auto=format&fit=crop",
+                desc: "Imitako y'indabo z'urusengero ifite uruziga no kwakira abageni k'uwo munsi."
+            },
+            {
+                id: 10,
+                name: "Red Carpet & Chair Covers (Abashyitsi 100)",
+                category: "religious",
+                price: 70000,
+                type: "Rent",
+                image: "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?q=80&w=800&auto=format&fit=crop",
+                desc: "Tapis rouge ndende n'ibifuniko z'intebe z'abashyitsi z'amabara yose."
+            },
+            {
+                id: 11,
+                name: "Birthday Party Backdrop & LED Neon Sign",
+                category: "birthday",
+                price: 35000,
+                type: "Rent",
+                image: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?q=80&w=800&auto=format&fit=crop",
+                desc: "Set y'isabukuru: Round backdrop, Balloon Arch setup, cake table & Neon light."
+            },
+            {
+                id: 12,
+                name: "Bridal Shower Queen Chair & Flowers Backdrop",
+                category: "bridalshower",
+                price: 40000,
+                type: "Rent",
+                image: "https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=800&auto=format&fit=crop",
+                desc: "Intebe y'ingoma ya Bride-to-be, curtains z'isanduku n'indabo z'igikundiro."
+            }
+        ];
+
+        let cart = [];
+
+        // Render Product Catalog
+        function renderProducts(items) {
+            const grid = document.getElementById('productGrid');
+            grid.innerHTML = '';
+
+            if (items.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full text-center py-12 text-gray-500">
+                        <i class="fa-solid fa-box-open text-4xl mb-3 block text-gray-300"></i>
+                        <p class="font-semibold">Nta igikoresho kibonetse mu gushaka kwawe.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            items.forEach(product => {
+                const card = document.createElement('div');
+                card.className = "bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-md hover:shadow-xl transition-all flex flex-col justify-between group";
+                card.innerHTML = `
+                    <div>
+                        <div class="h-52 overflow-hidden relative">
+                            <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-3 left-3 bg-brand-deepGreen text-brand-gold font-bold text-xs px-2.5 py-1 rounded-full border border-brand-gold/30">
+                                ${product.type}
+                            </span>
+                        </div>
+                        <div class="p-5 space-y-2">
+                            <h3 class="font-bold text-gray-800 text-base leading-snug">${product.name}</h3>
+                            <p class="text-xs text-gray-500 line-clamp-2">${product.desc}</p>
+                            <p class="text-brand-emerald font-bold text-sm pt-2">${product.price.toLocaleString()} RWF</p>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0">
+                        <button onclick="addToCart(${product.id})" class="w-full bg-brand-cream hover:bg-brand-emerald hover:text-white text-brand-deepGreen border border-brand-emerald/30 font-bold py-2.5 rounded-xl text-xs transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-cart-plus"></i>
+                            Ongeraho mu Command
+                        </button>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Filter Categories
+        function filterCategory(cat) {
+            document.querySelectorAll('.cat-btn').forEach(btn => {
+                if (btn.getAttribute('data-cat') === cat) {
+                    btn.className = "cat-btn px-5 py-2 rounded-full text-xs font-semibold whitespace-nowrap bg-brand-emerald text-white shadow-sm";
+                } else {
+                    btn.className = "cat-btn px-5 py-2 rounded-full text-xs font-semibold whitespace-nowrap bg-white text-gray-700 hover:bg-gray-100 border border-gray-200";
+                }
+            });
+
+            if (cat === 'all') {
+                renderProducts(products);
+            } else {
+                const filtered = products.filter(p => p.category === cat);
+                renderProducts(filtered);
+            }
+        }
+
+        // Search Catalog
+        function searchProducts() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const filtered = products.filter(p => p.name.toLowerCase().includes(query) || p.desc.toLowerCase().includes(query));
+            renderProducts(filtered);
+        }
+
+        // Add to Cart
+        function addToCart(productId) {
+            const item = products.find(p => p.id === productId);
+            const existing = cart.find(c => c.id === productId);
+            
+            if (existing) {
+                existing.qty += 1;
+            } else {
+                cart.push({ ...item, qty: 1 });
+            }
+
+            updateCartUI();
+            toggleCartModal(true);
+        }
+
+        // Update Cart UI
+        function updateCartUI() {
+            const count = cart.reduce((sum, item) => sum + item.qty, 0);
+            document.getElementById('cartCount').textContent = count;
+            document.getElementById('cartCountMobile').textContent = count;
+
+            const cartList = document.getElementById('cartItemsList');
+            cartList.innerHTML = '';
+
+            if (cart.length === 0) {
+                cartList.innerHTML = `
+                    <div class="text-center py-8 text-gray-400">
+                        <i class="fa-solid fa-basket-shopping text-3xl block mb-2"></i>
+                        <p class="text-xs">Command yawe iragorekeje. Hitamo ibikoresho mu nzu!</p>
+                    </div>
+                `;
+                document.getElementById('cartTotal').textContent = '0 RWF';
+                return;
+            }
+
+            let total = 0;
+            cart.forEach(item => {
+                const itemTotal = item.price * item.qty;
+                total += itemTotal;
+
+                const div = document.createElement('div');
+                div.className = "flex items-center justify-between p-3 bg-gray-50 rounded-xl border border-gray-100";
+                div.innerHTML = `
+                    <div class="flex items-center gap-3">
+                        <img src="${item.image}" class="w-12 h-12 rounded-lg object-cover">
+                        <div>
+                            <h4 class="font-bold text-xs text-gray-800">${item.name}</h4>
+                            <span class="text-xs text-brand-emerald font-semibold">${item.price.toLocaleString()} RWF x ${item.qty}</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <button onclick="changeQty(${item.id}, -1)" class="w-6 h-6 bg-gray-200 text-gray-700 rounded-md font-bold text-xs">-</button>
+                        <span class="text-xs font-bold">${item.qty}</span>
+                        <button onclick="changeQty(${item.id}, 1)" class="w-6 h-6 bg-brand-emerald text-white rounded-md font-bold text-xs">+</button>
+                    </div>
+                `;
+                cartList.appendChild(div);
+            });
+
+            document.getElementById('cartTotal').textContent = `${total.toLocaleString()} RWF`;
+        }
+
+        function changeQty(id, delta) {
+            const item = cart.find(c => c.id === id);
+            if (item) {
+                item.qty += delta;
+                if (item.qty <= 0) {
+                    cart = cart.filter(c => c.id !== id);
+                }
+            }
+            updateCartUI();
+        }
+
+        // Toggle Cart Modal
+        function toggleCartModal(show = null) {
+            const modal = document.getElementById('cartModal');
+            if (show === true) {
+                modal.classList.remove('hidden');
+            } else if (show === false) {
+                modal.classList.add('hidden');
+            } else {
+                modal.classList.toggle('hidden');
+            }
+        }
+
+        // Send Cart via WhatsApp
+        function sendCartToWhatsapp() {
+            if (cart.length === 0) {
+                alert("Nta bikoresho biri mu gitebo cyangwa mu command yawe!");
+                return;
+            }
+
+            const date = document.getElementById('cartEventDate').value || "Ntitangajwe";
+            let msg = `*COMMAND NSHYA KURI MAMA MUGISHA SHOP*\n`;
+            msg += `---------------------------------\n`;
+            msg += `*Tariki y'Ibirori:* ${date}\n\n`;
+            msg += `*IBIKORESHO/IMYENDA YATOJWE:*\n`;
+
+            let total = 0;
+            cart.forEach((item, idx) => {
+                const sub = item.price * item.qty;
+                total += sub;
+                msg += `${idx + 1}. ${item.name} (${item.qty}x) = ${sub.toLocaleString()} RWF\n`;
+            });
+
+            msg += `\n*IGITERANYO CY'IKIGERERANYO:* ${total.toLocaleString()} RWF\n`;
+            msg += `---------------------------------\n`;
+            msg += `Ndashaka ibisobanuro birambuye n'uko naftata iy'i command. Murakoze!`;
+
+            const encoded = encodeURIComponent(msg);
+            window.open(`https://wa.me/250788532567?text=${encoded}`, '_blank');
+        }
+
+        // Calculator Estimator Logic
+        function calculateEstimate() {
+            const type = document.getElementById('calcEventType').value;
+            const guests = parseInt(document.getElementById('calcGuests').value);
+            const attire = document.getElementById('calcAttire').value;
+
+            let baseMin = 100000;
+            let baseMax = 200000;
+
+            if (type === 'cultural') { baseMin += 80000; baseMax += 150000; }
+            if (type === 'religious') { baseMin += 100000; baseMax += 220000; }
+            if (type === 'birthday') { baseMin += 40000; baseMax += 80000; }
+            if (type === 'bridalshower') { baseMin += 50000; baseMax += 90000; }
+
+            if (guests > 150) { baseMin += 50000; baseMax += 100000; }
+            if (guests > 300) { baseMin += 120000; baseMax += 250000; }
+
+            if (attire === 'bride') { baseMin += 40000; baseMax += 70000; }
+            if (attire === 'full') { baseMin += 90000; baseMax += 180000; }
+
+            document.getElementById('calcResult').textContent = `${baseMin.toLocaleString()} RWF - ${baseMax.toLocaleString()} RWF`;
+        }
+
+        function sendEstimateToWhatsapp() {
+            const typeText = document.getElementById('calcEventType').options[document.getElementById('calcEventType').selectedIndex].text;
+            const guestsText = document.getElementById('calcGuests').options[document.getElementById('calcGuests').selectedIndex].text;
+            const attireText = document.getElementById('calcAttire').options[document.getElementById('calcAttire').selectedIndex].text;
+            const est = document.getElementById('calcResult').textContent;
+
+            let msg = `*SABA QUOTATION - MAMA MUGISHA ESTIMATOR*\n`;
+            msg += `*Ubwoko bw'Ibirori:* ${typeText}\n`;
+            msg += `*Umubare w'Abashyitsi:* ${guestsText}\n`;
+            msg += `*Imyenda:* ${attireText}\n`;
+            msg += `*Ikigereranyo cy'Igiciro:* ${est}\n\n`;
+            msg += `Ndasaba umbwira gahunda n'uko twavugana kuri phone +250788532567. Murakoze!`;
+
+            window.open(`https://wa.me/250788532567?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+
+        // Quick Form Submission
+        function sendFormToWhatsapp(e) {
+            e.preventDefault();
+            const name = document.getElementById('custName').value;
+            const interest = document.getElementById('custInterest').value;
+            const date = document.getElementById('eventDate').value || "Ntitangajwe";
+            const extra = document.getElementById('custMsg').value || "Nta rindi baruwa";
+
+            let msg = `*UMUBAHAMO NSHYA - MAMA MUGISHA WEBSITE*\n`;
+            msg += `*Izina:* ${name}\n`;
+            msg += `*Ibikoresho/Imyenda Shaka:* ${interest}\n`;
+            msg += `*Tariki:* ${date}\n`;
+            msg += `*Ubumwa:* ${extra}\n`;
+
+            window.open(`https://wa.me/250788532567?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Initial Load
+        window.onload = function() {
+            renderProducts(products);
+            calculateEstimate();
+        };
+    </script>
+</body>
+</html>
